@@ -1,0 +1,5 @@
+{
+  "name": "VA Benefits Navigator",
+  "description": "An AI-powered assistant to help veterans understand and navigate the VA benefits process, providing information based on 38 CFR and other regulations.",
+  "requestFramePermissions": []
+}
