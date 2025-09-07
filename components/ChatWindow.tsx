@@ -25,9 +25,9 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages, isLoading }) => {
       ))}
       {isLoading && (
         <div className="flex justify-start">
-            <div className="flex items-center space-x-2 bg-slate-200 rounded-lg rounded-bl-none p-3 max-w-lg">
+            <div className="flex items-center space-x-2 bg-slate-700 rounded-lg rounded-bl-none p-3 max-w-lg">
                 <LoadingSpinner />
-                <span className="text-slate-600 animate-pulse">Thinking...</span>
+                <span className="text-slate-400 animate-pulse">Thinking...</span>
             </div>
         </div>
       )}

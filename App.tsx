@@ -4,6 +4,7 @@ import Header from './components/Header';
 import ChatWindow from './components/ChatWindow';
 import MessageInput from './components/MessageInput';
 import Footer from './components/Footer';
+import QuickActions from './components/QuickActions';
 import { getVABenefitsResponse } from './services/geminiService';
 import type { Message } from './types';
 
@@ -11,6 +12,7 @@ const App: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [showQuickActions, setShowQuickActions] = useState<boolean>(true);
 
   useEffect(() => {
     // Initial welcome message
@@ -25,6 +27,8 @@ const App: React.FC = () => {
 
   const handleSendMessage = useCallback(async (prompt: string) => {
     if (!prompt.trim()) return;
+
+    setShowQuickActions(false);
 
     const userMessage: Message = {
       id: `user-${Date.now()}`,
@@ -60,13 +64,16 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col h-screen font-sans bg-slate-100 text-slate-800">
+    <div className="flex flex-col h-screen font-sans bg-slate-900 text-slate-200">
       <Header />
       <main className="flex-1 overflow-hidden flex flex-col">
         <ChatWindow messages={messages} isLoading={isLoading} />
       </main>
-      <div className="p-4 bg-white border-t border-slate-200">
-        <MessageInput onSendMessage={handleSendMessage} isLoading={isLoading} />
+      <div className="bg-slate-800 border-t border-slate-700">
+        <div className="container mx-auto p-4">
+            {showQuickActions && <QuickActions onSendMessage={handleSendMessage} />}
+            <MessageInput onSendMessage={handleSendMessage} isLoading={isLoading} />
+        </div>
       </div>
       <Footer />
     </div>

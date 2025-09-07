@@ -9,10 +9,10 @@ const ShieldIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 const Header: React.FC = () => {
     return (
-        <header className="bg-white shadow-md z-10">
+        <header className="bg-slate-800 border-b border-slate-700 z-10">
             <div className="container mx-auto px-4 py-3 flex items-center">
-                <ShieldIcon className="h-8 w-8 text-blue-700 mr-3" />
-                <h1 className="text-xl font-bold text-slate-800 tracking-tight">
+                <ShieldIcon className="h-8 w-8 text-blue-500 mr-3" />
+                <h1 className="text-xl font-bold text-slate-100 tracking-tight">
                     VA Benefits Navigator
                 </h1>
             </div>

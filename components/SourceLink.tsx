@@ -23,7 +23,7 @@ const SourceLink: React.FC<SourceLinkProps> = ({ source }) => {
       href={source.uri}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center bg-white hover:bg-slate-50 border border-slate-300 rounded-full px-3 py-1 text-sm text-slate-700 hover:text-blue-600 transition-colors"
+      className="inline-flex items-center bg-slate-600 hover:bg-slate-500 border border-slate-500 rounded-full px-3 py-1 text-sm text-slate-300 hover:text-blue-300 transition-colors"
       title={source.title}
     >
       <img src={faviconUrl} alt={`${domain} favicon`} className="w-4 h-4 mr-2" onError={(e) => (e.currentTarget.style.display = 'none')} />

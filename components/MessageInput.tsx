@@ -38,7 +38,7 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage, isLoading })
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder="Ask about VA benefits..."
-        className="flex-1 p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none transition-shadow"
+        className="flex-1 p-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none transition-shadow"
         rows={1}
         disabled={isLoading}
         style={{ minHeight: '44px', maxHeight: '200px' }}
@@ -46,7 +46,7 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage, isLoading })
       <button
         type="submit"
         disabled={isLoading || !input.trim()}
-        className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-slate-400 disabled:cursor-not-allowed transition-colors"
+        className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-slate-600 disabled:text-slate-400 disabled:cursor-not-allowed transition-colors"
         aria-label="Send message"
       >
         <SendIcon className="h-5 w-5" />
